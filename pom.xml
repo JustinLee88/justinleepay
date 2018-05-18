@@ -5,24 +5,11 @@
 
     <groupId>com.github.JustinLee88</groupId>
     <artifactId>justinleepay</artifactId>
-    <version>1.0.8</version>
+    <version>1.1.2</version>
     <packaging>jar</packaging>
     <name>justinleepay</name>
     <description>Demo project for Spring Boot</description>
     <url>https://github.com/JustinLee88/justinleepay</url>
-
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
-
-    <licenses>
-        <license>
-            <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
 
 
     <scm>
@@ -44,7 +31,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>2.0.1.RELEASE</version>
+            <version>1.5.13.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -173,6 +160,18 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <version>2.0.1.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.0.5.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -185,33 +184,6 @@
                     <includeSystemScope>true</includeSystemScope>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
-                <configuration>
-                    <!-- 解决 java8 下发布到 maven 中心库时，生成 doc 的异常 -->
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <outputDirectory>${basedir}</outputDirectory>
-                    <reportOutputDirectory>${basedir}</reportOutputDirectory>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <url>http://repo.spring.io/libs-release</url>
-        </repository>
-    </repositories>
 </project>
