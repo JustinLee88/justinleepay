@@ -7,9 +7,29 @@
     <artifactId>justinleepay</artifactId>
     <version>1.0.5</version>
     <packaging>jar</packaging>
-
     <name>justinleepay</name>
     <description>Demo project for Spring Boot</description>
+    <url>https://github.com/JustinLee88/justinleepay</url>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+
+    <scm>
+        <connection>scm:git:git@github.com:JustinLee88/justinleepay</connection>
+        <developerConnection>scm:git:git@github.com:JustinLee88/justinleepay</developerConnection>
+        <url>scm:git:git@github.com:JustinLee88/justinleepay</url>
+    </scm>
 
     <properties>
         <github.global.server>github</github.global.server>
