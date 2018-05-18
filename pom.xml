@@ -5,33 +5,11 @@
 
     <groupId>com.github.JustinLee88</groupId>
     <artifactId>justinleepay</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
     <name>justinleepay</name>
     <description>Demo project for Spring Boot</description>
-
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
-
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>justinLee</name>
-            <email>liang891004@yeah.net</email>
-            <url>https://www.iteblog.com</url>
-        </developer>
-    </developers>
 
     <properties>
         <github.global.server>github</github.global.server>
@@ -182,70 +160,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
-                <configuration>
-                    <!-- 解决 java8 下发布到 maven 中心库时，生成 doc 的异常 -->
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <outputDirectory>${basedir}</outputDirectory>
-                    <reportOutputDirectory>${basedir}</reportOutputDirectory>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
-    <profiles>
-        <!-- mvn clean javadoc:jar source:jar deploy -P release -Dgpg.passphrase=xxxx -->
-        <profile>
-            <id>release</id>
-            <build>
-                <plugins>
-                    <!-- GPG -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>nexus-release</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-                </snapshotRepository>
-                <repository>
-                    <id>nexus-release</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-    </profiles>
-
-    <!-- 使用aliyun maven -->
-    <repositories>
-        <repository>
-            <id>aliyun</id>
-            <name>aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
 </project>
