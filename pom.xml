@@ -5,7 +5,7 @@
 
     <groupId>com.github.JustinLee88</groupId>
     <artifactId>justinleepay</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>justinleepay</name>
