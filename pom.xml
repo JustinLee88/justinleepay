@@ -5,7 +5,7 @@
 
     <groupId>com.github.JustinLee88</groupId>
     <artifactId>justinleepay</artifactId>
-    <version>1.0.4</version>
+    <version>1.1.4</version>
     <packaging>jar</packaging>
     <name>jpay</name>
     <url>https://github.com/JustinLee88/justinleepay</url>
