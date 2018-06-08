@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Class-Path: javase-3.2.1.jar jcl-over-slf4j-1.7.21.jar jcommander-1.48
+ .jar jnr-constants-0.9.8.jar tcp-unix-socket-proxy-1.0.1.jar hamcrest
+ -core-1.3.jar jffi-1.2.15-native.jar jffi-1.2.15.jar asm-analysis-5.0
+ .3.jar visible-assertions-2.0.0.jar commons-logging-1.2.jar commons-c
+ ompress-1.12.jar testcontainers-1.4.3.jar bcprov-jdk16-1.46.jar duct-
+ tape-1.0.6.jar junixsocket-native-common-2.0.4.jar commons-io-2.5.jar
+  commons-lang3-3.4.jar junixsocket-common-2.0.4.jar asm-tree-5.0.3.ja
+ r cglib-nodep-3.2.5.jar alipay-sdk-java20180309170622.jar jnr-ffi-2.1
+ .4.jar annotations-13.0.jar jfinal-3.2.jar junit-4.12.jar commons-cod
+ ec-1.10.jar asm-commons-5.0.3.jar slf4j-ext-1.7.25.jar jfinal-weixin-
+ 1.9.jar bcprov-jdk15on-1.54.jar zt-exec-1.8.jar commons-lang-2.6.jar 
+ javax.servlet-api-3.1.0.jar asm-util-5.0.3.jar slf4j-log4j12-1.7.25.j
+ ar core-3.2.1.jar native-lib-loader-2.0.2.jar jnr-posix-3.0.41.jar sl
+ f4j-api-1.7.25.jar fastjson-1.2.6.jar jnr-x86asm-1.0.2.jar log4j-1.2.
+ 17.jar asm-5.0.3.jar
+Main-Class: 
+

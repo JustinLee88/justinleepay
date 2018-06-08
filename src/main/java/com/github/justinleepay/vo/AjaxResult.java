@@ -40,7 +40,7 @@ public class AjaxResult {
 
 	/**
 	 * 用于Confirm的错误信息
-	 * @param message
+	 * @param message 数据信息
 	 * @return {AjaxResult}
 	 */
 	public AjaxResult addConfirmError(String message) {
@@ -51,7 +51,7 @@ public class AjaxResult {
 
 	/**
 	 * 封装成功时的数据
-	 * @param data
+	 * @param data 数据信息
 	 * @return {AjaxResult}
 	 */
 	public AjaxResult success(Object data) {

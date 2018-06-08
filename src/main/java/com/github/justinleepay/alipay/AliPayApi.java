@@ -24,11 +24,11 @@ import java.util.Map;
 public class AliPayApi {
 
 	/**
-	 * APP支付
-	 * @param model
-	 * @param notifyUrl
-	 * @return {String}
-	 * @throws {AlipayApiException}
+	 *
+	 * @param model 开始支付
+	 * @param notifyUrl https://doc.open.alipay.com/docs/doc.htm
+	 * @return 响应体
+	 * @throws AlipayApiException 抛异常
 	 */
 	public static String startAppPay(AlipayTradeAppPayModel model, String notifyUrl) throws AlipayApiException{
 		AlipayTradeAppPayResponse response = appPayToResponse(model,notifyUrl);
@@ -36,12 +36,10 @@ public class AliPayApi {
 	}
 	
 	/**
-	 * APP支付
-	 * https://doc.open.alipay.com/docs/doc.htm?treeId=54&articleId=106370&docType=1
-	 * @param model
-	 * @param notifyUrl
-	 * @return {AlipayTradeAppPayResponse}
-	 * @throws {AlipayApiException}
+	 *
+	 *
+	 * @param model APP支付
+	 * @param notifyUrl https://doc.open.alipay.com/docs/doc.htm
 	 */
 	public static AlipayTradeAppPayResponse appPayToResponse(AlipayTradeAppPayModel model, String notifyUrl) throws AlipayApiException{
 		//实例化具体API对应的request类,类名称和接口名称对应,当前调用接口名称：alipay.trade.app.pay
@@ -55,12 +53,10 @@ public class AliPayApi {
 	}
 	
 	/**
-	 * APP支付
-	 * https://doc.open.alipay.com/docs/doc.htm?treeId=54&articleId=106370&docType=1
-	 * @param model
-	 * @param notifyUrl
-	 * @return {AlipayTradeAppPayResponse}
-	 * @throws {AlipayApiException}
+	 *
+	 *
+	 * @param model APP支付
+	 * @param notifyUrl https://doc.open.alipay.com/docs/doc.htm?treeId=54&articleId=106370&docType=1
 	 */
 	@Deprecated
 	public static AlipayTradeAppPayResponse appPay(AlipayTradeAppPayModel model, String notifyUrl) throws AlipayApiException{
@@ -68,13 +64,12 @@ public class AliPayApi {
 	}
 
 	/**
-	 * WAP支付
-	 * https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.dfHHR3&treeId=203&articleId=105285&docType=1
-	 * @param response
-	 * @param model
-	 * @param returnUrl
-	 * @param notifyUrl
-	 * @throws {AlipayApiException}
+	 *
+	 *
+	 * @param response 响应
+	 * @param model WAP支付
+	 * @param returnUrl https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.dfHHR3&treeId=203&articleId=105285&docType=1
+	 * @param notifyUrl https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.dfHHR3&treeId=203&articleId=105285&docType=1
 	 * @throws IOException
 	 */
 	public static void wapPay(HttpServletResponse response, AlipayTradeWapPayModel model, String returnUrl, String notifyUrl) throws AlipayApiException, IOException {
@@ -85,13 +80,12 @@ public class AliPayApi {
 		httpResponse.getWriter().flush();
 	}
 	/**
-	 * WAP支付
-	 * @param response
-	 * @param model
-	 * @param returnUrl
-	 * @param notifyUrl
+	 *
+	 * @param response 响应
+	 * @param model WAP支付
+	 * @param returnUrl https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.dfHHR3&treeId=203&articleId=105285&docType=1
+	 * @param notifyUrl https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.dfHHR3&treeId=203&articleId=105285&docType=1
 	 * @return {String}
-	 * @throws {AlipayApiException}
 	 * @throws IOException
 	 */
 	public static String wapPayStr(HttpServletResponse response, AlipayTradeWapPayModel model, String returnUrl, String notifyUrl) throws AlipayApiException, IOException {
@@ -103,13 +97,11 @@ public class AliPayApi {
 	}
 	
 	/**
-	 * WAP支付
-	 * @param response
-	 * @param model
-	 * @param returnUrl
-	 * @param notifyUrl
+	 * @param response 响应
+	 * @param model WAP支付
+	 * @param returnUrl https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.dfHHR3&treeId=203&articleId=105285&docType=1
+	 * @param notifyUrl https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.dfHHR3&treeId=203&articleId=105285&docType=1
 	 * @return {String}
-	 * @throws {AlipayApiException}
 	 * @throws IOException
 	 */
 	@Deprecated
@@ -118,24 +110,21 @@ public class AliPayApi {
 	}
 
 	/**
-	 * 条形码支付、声波支付
-	 * https://doc.open.alipay.com/docs/api.htm?spm=a219a.7629065.0.0.XVqALk&apiId=850&docType=4
-	 * @param model
-	 * @param notifyUrl
+	 *
+	 *
+	 * @param model 条形码支付、声波支付
+	 * @param notifyUrl https://doc.open.alipay.com/docs/api.htm?spm=a219a.7629065.0.0.XVqALk&apiId=850&docType=4
 	 * @return {String}
-	 * @throws {AlipayApiException}
 	 */
 	public static String tradePay(AlipayTradePayModel model, String notifyUrl) throws AlipayApiException {
 		AlipayTradePayResponse response = tradePayToResponse(model,notifyUrl);
 		return response.getBody();
 	}
 	/**
-	 * 交易支付接口
-	 * 条形码支付、声波支付
-	 * @param model
-	 * @param notifyUrl
-	 * @return {AlipayTradePayResponse}
-	 * @throws {AlipayApiException}
+	 *
+	 *
+	 * @param model 交易支付接口
+	 * @param notifyUrl 条形码支付、声波支付
 	 */
 	public static AlipayTradePayResponse tradePayToResponse(AlipayTradePayModel model, String notifyUrl) throws AlipayApiException{
 		AlipayTradePayRequest request = new AlipayTradePayRequest();
@@ -147,24 +136,21 @@ public class AliPayApi {
 	
 	
 	/**
-	 * 统一收单线下交易预创建
+	 *
 	 * 扫码支付
-	 * https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.i0UVZn&treeId=193&articleId=105170&docType=1#s4
-	 * @param model
-	 * @param notifyUrl
+	 *
+	 * @param model 统一收单线下交易预创建
+	 * @param notifyUrl https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.i0UVZn&treeId=193&articleId=105170&docType=1#s4
 	 * @return {String}
-	 * @throws {AlipayApiException}
 	 */
 	public static String tradePrecreatePay(AlipayTradePrecreateModel model, String notifyUrl) throws AlipayApiException{
 		AlipayTradePrecreateResponse response = tradePrecreatePayToResponse(model,notifyUrl);
 		return response.getBody();
 	}
 	/**
-	 * 扫码支付
-	 * @param model
-	 * @param notifyUrl
-	 * @return {AlipayTradePrecreateResponse}
-	 * @throws {AlipayApiException}
+	 *
+	 * @param model 扫码支付
+	 * @param notifyUrl https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.i0UVZn&treeId=193&articleId=105170&docType=1#s4
 	 */
 	public static AlipayTradePrecreateResponse tradePrecreatePayToResponse(AlipayTradePrecreateModel model, String notifyUrl) throws AlipayApiException{
 		AlipayTradePrecreateRequest request = new AlipayTradePrecreateRequest();
@@ -174,11 +160,10 @@ public class AliPayApi {
 	}
 	
 	/**
-	 * 单笔转账到支付宝账户
+	 *
 	 * https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.54Ty29&treeId=193&articleId=106236&docType=1
-	 * @param model
+	 * @param model 单笔转账到支付宝账户
 	 * @return {boolean}
-	 * @throws {AlipayApiException}
 	 */
 	public static boolean transfer(AlipayFundTransToaccountTransferModel model) throws AlipayApiException{
 		AlipayFundTransToaccountTransferResponse response = transferToResponse(model);
@@ -199,10 +184,8 @@ public class AliPayApi {
 		return false;
 	}
 	/**
-	 * 单笔转账到支付宝账户
-	 * @param model
-	 * @return {AlipayFundTransToaccountTransferResponse}
-	 * @throws {AlipayApiException}
+	 *
+	 * @param model 单笔转账到支付宝账户
 	 */
 	public static AlipayFundTransToaccountTransferResponse transferToResponse(AlipayFundTransToaccountTransferModel model) throws AlipayApiException{
 		AlipayFundTransToaccountTransferRequest request = new AlipayFundTransToaccountTransferRequest();
@@ -211,10 +194,9 @@ public class AliPayApi {
 	}
 	
 	/**
-	 * 转账查询接口
-	 * @param model
+	 *
+	 * @param model 转账查询接口
 	 * @return {boolean}
-	 * @throws {AlipayApiException}
 	 */
 	public static boolean transferQuery(AlipayFundTransOrderQueryModel model) throws AlipayApiException{
 		AlipayFundTransOrderQueryResponse response = transferQueryToResponse(model);
@@ -224,10 +206,8 @@ public class AliPayApi {
 		return false;
 	}
 	/**
-	 * 转账查询接口
-	 * @param model
-	 * @return {AlipayFundTransOrderQueryResponse}
-	 * @throws {AlipayApiException}
+	 *
+	 * @param model 转账查询接口
 	 */
 	public static AlipayFundTransOrderQueryResponse transferQueryToResponse(AlipayFundTransOrderQueryModel model) throws AlipayApiException{
 		AlipayFundTransOrderQueryRequest request = new AlipayFundTransOrderQueryRequest();
@@ -236,11 +216,10 @@ public class AliPayApi {
 	}
 	
 	/**
-	 * 交易查询接口
+	 *
 	 * https://doc.open.alipay.com/docs/api.htm?spm=a219a.7395905.0.0.8H2JzG&docType=4&apiId=757
-	 * @param model
+	 * @param model 交易查询接口
 	 * @return {boolean}
-	 * @throws {AlipayApiException}
 	 */
 	public static boolean isTradeQuery(AlipayTradeQueryModel model) throws AlipayApiException{
 		AlipayTradeQueryResponse response = tradeQueryToResponse(model);
@@ -250,10 +229,8 @@ public class AliPayApi {
 		return false;
 	}
 	/**
-	 * 交易查询接口
-	 * @param model
-	 * @return {AlipayTradeQueryResponse}
-	 * @throws {AlipayApiException}
+	 *
+	 * @param model 交易查询接口
 	 */
 	public static AlipayTradeQueryResponse  tradeQueryToResponse(AlipayTradeQueryModel model) throws AlipayApiException{
 		AlipayTradeQueryRequest request = new AlipayTradeQueryRequest();
@@ -262,9 +239,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 交易查询接口
-	 * @param model
-	 * @return {AlipayTradeQueryResponse}
-	 * @throws {AlipayApiException}
+	 * @param model 交易查询接口
 	 */
 	@Deprecated
 	public static AlipayTradeQueryResponse  tradeQuery(AlipayTradeQueryModel model) throws AlipayApiException{
@@ -275,9 +250,8 @@ public class AliPayApi {
 	/**
 	 * 交易撤销接口
 	 * https://doc.open.alipay.com/docs/api.htm?spm=a219a.7395905.0.0.XInh6e&docType=4&apiId=866
-	 * @param model
+	 * @param model 交易查询接口
 	 * @return {boolean}
-	 * @throws {AlipayApiException}
 	 */
 	public static boolean isTradeCancel(AlipayTradeCancelModel model) throws AlipayApiException{
 		AlipayTradeCancelResponse response = tradeCancelToResponse(model);
@@ -288,7 +262,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 交易撤销接口
-	 * @param model
+	 * @param model 交易查询接口
 	 * @return {AlipayTradeCancelResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -300,7 +274,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 交易撤销接口
-	 * @param model
+	 * @param model 交易查询接口
 	 * @return {AlipayTradeCancelResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -311,7 +285,7 @@ public class AliPayApi {
 	/**
 	 * 关闭订单
 	 * https://doc.open.alipay.com/docs/api.htm?spm=a219a.7629065.0.0.21yRUe&apiId=1058&docType=4
-	 * @param model
+	 * @param model 交易查询接口
 	 * @return {boolean}
 	 * @throws {AlipayApiException}
 	 */
@@ -324,7 +298,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 关闭订单
-	 * @param model
+	 * @param model 交易查询接口
 	 * @return {AlipayTradeCloseResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -336,7 +310,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 关闭订单
-	 * @param model
+	 * @param model 交易查询接口
 	 * @return {AlipayTradeCloseResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -347,9 +321,9 @@ public class AliPayApi {
 	}
 	/**
 	 * 统一收单交易创建接口
-	 * https://doc.open.alipay.com/docs/api.htm?spm=a219a.7629065.0.0.21yRUe&apiId=1046&docType=4
-	 * @param model
-	 * @param notifyUrl
+	 *
+	 * @param model 交易查询接口
+	 * @param notifyUrl https://doc.open.alipay.com/docs/api.htm?spm=a219a.7629065.0.0.21yRUe&apiId=1046&docType=4
 	 * @return {AlipayTradeCreateResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -363,8 +337,8 @@ public class AliPayApi {
 	
 	/**
 	 * 退款
-	 * https://doc.open.alipay.com/docs/api.htm?spm=a219a.7395905.0.0.SAyEeI&docType=4&apiId=759
-	 * @param model
+	 *
+	 * @param model https://doc.open.alipay.com/docs/api.htm?spm=a219a.7395905.0.0.SAyEeI&docType=4&apiId=759
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -373,8 +347,8 @@ public class AliPayApi {
 		return response.getBody();
 	}
 	/**
-	 * 退款
-	 * @param model
+	 *
+	 * @param model 退款
 	 * @return {AlipayTradeRefundResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -387,7 +361,7 @@ public class AliPayApi {
 	/**
 	 * 退款查询
 	 * https://doc.open.alipay.com/docs/api.htm?spm=a219a.7629065.0.0.KQeTSa&apiId=1049&docType=4
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -397,7 +371,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 退款查询
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayTradeFastpayRefundQueryResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -410,7 +384,7 @@ public class AliPayApi {
 	
 	/**
 	 * 查询对账单下载地址
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -420,7 +394,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 查询对账单下载地址
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayDataDataserviceBillDownloadurlQueryResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -434,7 +408,7 @@ public class AliPayApi {
 	/**
 	 * 交易结算接口
 	 * https://doc.open.alipay.com/docs/api.htm?spm=a219a.7395905.0.0.nl0RS3&docType=4&apiId=1147
-	 * @param model
+	 * @param model 退款
 	 * @return {boolean}
 	 * @throws {AlipayApiException}
 	 */
@@ -447,7 +421,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 交易结算接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayTradeOrderSettleResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -458,7 +432,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 交易结算接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayTradeOrderSettleResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -469,10 +443,10 @@ public class AliPayApi {
 	
 	/**
 	 * 电脑网站支付(PC支付)
-	 * @param httpResponse
-	 * @param model
-	 * @param notifyUrl
-	 * @param returnUrl
+	 * @param httpResponse 退款
+	 * @param model 退款
+	 * @param notifyUrl 退款
+	 * @param returnUrl 退款
 	 * @throws {AlipayApiException}
 	 * @throws IOException
 	 */
@@ -490,7 +464,7 @@ public class AliPayApi {
 	/**
 	 * 资金预授权冻结接口
 	 * https://docs.open.alipay.com/318/106384/
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -500,7 +474,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 资金预授权冻结接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundAuthOrderFreezeResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -512,7 +486,7 @@ public class AliPayApi {
 	
 	/**
 	 * 资金授权解冻接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -523,7 +497,7 @@ public class AliPayApi {
 	
 	/**
 	 * 资金授权解冻接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundAuthOrderUnfreezeResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -536,7 +510,7 @@ public class AliPayApi {
 	/**
 	 * 资金授权发码接口
 	 * https://docs.open.alipay.com/318/106384/
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -546,7 +520,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 资金预授权冻结接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundAuthOrderVoucherCreateResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -558,7 +532,7 @@ public class AliPayApi {
 	
 	/**
 	 * 资金授权撤销接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -569,7 +543,7 @@ public class AliPayApi {
 	
 	/**
 	 * 资金授权撤销接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundAuthOperationCancelResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -582,7 +556,7 @@ public class AliPayApi {
 	
 	/**
 	 * 资金授权操作查询接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -593,7 +567,7 @@ public class AliPayApi {
 	
 	/**
 	 * 资金授权操作查询接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundAuthOperationDetailQueryResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -604,7 +578,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包无线支付接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -614,7 +588,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包无线支付接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundCouponOrderAppPayResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -626,7 +600,7 @@ public class AliPayApi {
 	
 	/**
 	 * 红包页面支付接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -636,7 +610,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包页面支付接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundCouponOrderPagePayResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -647,7 +621,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包协议支付接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -657,7 +631,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包协议支付接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundCouponOrderAgreementPayResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -668,7 +642,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包打款接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -678,7 +652,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包打款接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundCouponOrderDisburseResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -689,7 +663,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包退回接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -699,7 +673,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包退回接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundCouponOrderRefundResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -710,7 +684,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包退回接口
-	 * @param model
+	 * @param model 退款
 	 * @return {String}
 	 * @throws {AlipayApiException}
 	 */
@@ -720,7 +694,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 红包退回接口
-	 * @param model
+	 * @param model 退款
 	 * @return {AlipayFundCouponOperationQueryResponse}
 	 * @throws {AlipayApiException}
 	 */
@@ -731,8 +705,8 @@ public class AliPayApi {
 	}
 	/**
 	 * 应用授权URL拼装
-	 * @param appId
-	 * @param redirectUri
+	 * @param appId 退款
+	 * @param redirectUri 退款
 	 * @return 应用授权URL
 	 * @throws UnsupportedEncodingException
 	 */
@@ -745,7 +719,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 使用app_auth_code换取app_auth_token
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -756,7 +730,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 使用app_auth_code换取app_auth_token
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -766,7 +740,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 查询授权信息
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -777,7 +751,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 查询授权信息
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -787,7 +761,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 地铁购票发码
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -798,7 +772,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 地铁购票发码
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -808,7 +782,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 地铁购票发码退款
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -819,7 +793,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 地铁购票发码退款
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -830,7 +804,7 @@ public class AliPayApi {
 	
 	/**
 	 * 地铁车站数据查询
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -841,7 +815,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 地铁车站数据查询
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -851,7 +825,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 核销码批量查询
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -862,7 +836,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 核销码批量查询
-	 * @param model
+	 * @param model 退款
 	 * @return
 	 * @throws AlipayApiException
 	 */
@@ -886,7 +860,7 @@ public class AliPayApi {
 	}
 	/**
 	 * 将异步通知的参数转化为Map
-	 * @param request
+	 * @param request 退款
 	 * @return {Map<String, String>}
 	 */
 	public static Map<String, String> toMap(HttpServletRequest request) {

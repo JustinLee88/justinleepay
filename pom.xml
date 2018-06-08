@@ -5,9 +5,9 @@
 
     <groupId>com.github.JustinLee88</groupId>
     <artifactId>justinleepay</artifactId>
-    <version>1.1.4</version>
+    <version>1.1.5</version>
     <packaging>jar</packaging>
-    <name>jpay</name>
+    <name>justinleepay</name>
     <url>https://github.com/JustinLee88/justinleepay</url>
     <description>Demo project for Spring Boot</description>
 
@@ -48,25 +48,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>com.jfinal</groupId>
             <artifactId>jfinal</artifactId>
@@ -157,14 +138,25 @@
             <version>1.4.3</version>
         </dependency>
         <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>testcontainers</artifactId>
-            <version>1.4.3</version>
-        </dependency>
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>java20171012102412</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/alipay-sdk-java20180309170622.jar</systemPath>
+        </dependency>
+        <!-- 支付宝必须 -->
+        <!-- 银联必须 -->
+        <dependency>
+            <groupId>com.unionpay</groupId>
+            <artifactId>unionpay-sdk-java</artifactId>
+            <version>1.54</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/bcprov-jdk15on-1.54.jar</systemPath>
         </dependency>
     </dependencies>
 
@@ -174,6 +166,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <configuration>
+                    <!-- 解决 java8 下发布到 maven 中心库时，生成 doc 的异常 -->
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <outputDirectory>${basedir}</outputDirectory>
+                    <reportOutputDirectory>${basedir}</reportOutputDirectory>
+                </configuration>
             </plugin>
         </plugins>
     </build>

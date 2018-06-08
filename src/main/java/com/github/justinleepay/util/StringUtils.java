@@ -76,8 +76,8 @@ public final class StringUtils extends org.apache.commons.lang3.StringUtils {
 	 * 
 	 * int long use {0,number,#}
 	 * 
-	 * @param s 
-	 * @param args
+	 * @param s  需要格式化的字符串
+	 * @param args 转换
 	 * @return {String}转换后的字符串
 	 */
 	public static String format(String s, Object... args) {
@@ -86,9 +86,9 @@ public final class StringUtils extends org.apache.commons.lang3.StringUtils {
 	
 	/**
 	 * 替换某个字符
-	 * @param str
-	 * @param regex
-	 * @param args
+	 * @param str 转换字符
+	 * @param regex 转换字符
+	 * @param args 转换字符
 	 * @return {String}
 	 */
 	public static String replace(String str,String regex,String... args){
@@ -100,8 +100,8 @@ public final class StringUtils extends org.apache.commons.lang3.StringUtils {
 	}
 
 	/**
-	 * 转义HTML用于安全过滤
-	 * @param html
+	 *
+	 * @param html 转义HTML用于安全过滤
 	 * @return {String}
 	 */
 	public static String escapeHtml(String html) {
@@ -109,8 +109,8 @@ public final class StringUtils extends org.apache.commons.lang3.StringUtils {
 	}
 
 	/**
-	 * 清理字符串，清理出某些不可见字符
-	 * @param txt
+	 *
+	 * @param txt 清理字符串，清理出某些不可见字符
 	 * @return {String}
 	 */
 	public static String cleanChars(String txt) {
@@ -132,8 +132,9 @@ public final class StringUtils extends org.apache.commons.lang3.StringUtils {
 	}
 
 	/**
-	 * 随机数生成
-	 * @param count
+	 *
+	 * @param count 随机数生成
+	 * @param randomType 随机类型
 	 * @return {String}
 	 */
 	public static String random(int count, RandomType randomType) {
@@ -152,9 +153,5 @@ public final class StringUtils extends org.apache.commons.lang3.StringUtils {
 			}
 		}
 		return new String(buffer);
-	}
-	
-	public static void main(String[] args) {
-		System.out.println(random(32, RandomType.ALL));
 	}
 }
