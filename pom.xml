@@ -5,7 +5,7 @@
 
     <groupId>com.github.JustinLee88</groupId>
     <artifactId>justinleepay</artifactId>
-    <version>1.1.5</version>
+    <version>1.2.1</version>
     <packaging>jar</packaging>
     <name>justinleepay</name>
     <url>https://github.com/JustinLee88/justinleepay</url>
@@ -19,23 +19,24 @@
 
     <licenses>
         <license>
-            <name>The Apache Software License, Version 2.0</name>
+            <name>The Apache License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
         </license>
     </licenses>
 
+
     <scm>
-        <tag>master</tag>
-        <url>git@github.com:JustinLee88/justinleepay.git</url>
-        <connection>scm:git:git@github.com:JustinLee88/justinleepay.git</connection>
-        <developerConnection>scm:git:git@github.com:JustinLee88/justinleepay.git</developerConnection>
+        <connection>scm:git:git@github.com:JustinLee88/justinleepay</connection>
+        <developerConnection>scm:git:git@github.com:JustinLee88/justinleepay</developerConnection>
+        <url>scm:git:git@github.com:JustinLee88/justinleepay</url>
     </scm>
+
     <developers>
         <developer>
-            <name>justinlee</name>
+            <name>JustinLee</name>
             <email>liang891004@yeah.net</email>
-            <organization>JustinLee88</organization>
+            <organization>github</organization>
+            <organizationUrl>https://JustinLee88/justinleepay/</organizationUrl>
         </developer>
     </developers>
 
@@ -168,6 +169,28 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.3</version>
@@ -181,4 +204,47 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <!-- mvn clean javadoc:jar source:jar deploy -P release -Dgpg.passphrase=xxxx -->
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <!-- GPG -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>nexus-release</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>nexus-release</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+    <!-- 使用aliyun maven -->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
 </project>
