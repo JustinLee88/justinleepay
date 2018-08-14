@@ -58,10 +58,6 @@ public class WxPayApiConfig implements Serializable {
 	public WxPayApiConfig() {
 	}
 
-	public static WxPayApiConfig New() {
-		return new WxPayApiConfig();
-	}
-
 	/**
 	 * 构建请求参数
 	 * 
